@@ -9,12 +9,12 @@ while exit != 1:
     command = input()
     if command =="exit":
         exit = 1
-    if command == "help":
+    elif command == "help":
         if login == 0:
             print("login = login to the system \n exit = exit the system")
         else:
             print("logout = logout of the system \n buy = buy movie tickets \n sell = sell movie tickets ")
-    if command == "login":
+    elif command == "login":
         if login != 1:
             print("Enter UserName")
             username = input()
@@ -29,5 +29,14 @@ while exit != 1:
                 print("User not found on System")   
         else:
             print("Already Logged in")
+    elif command == "logout":
+        if login == 0:
+            print("Unable to logout due to no account being logged in")
+        elif login ==1:
+            print("Logged Out Successfully")
+            login =0
+    else:
+        print("Invalid Command")
+ 
 
 
